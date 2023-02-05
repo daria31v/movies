@@ -28,26 +28,27 @@ export const getDetails = async id => {
   const details = await axios.get(
     `movie/${id}?api_key=${params.key}&${params.language}`
   );
-  console.log(details.data);
+  // console.log(details.data);
   return details.data;
 };
 
 // for Cast
 // https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=<<api_key>>&language=en-US
-export const getCast = async () => {
-  const cast = await axios.get(
-    `movies/{movie_id}/credits?api_key=${params.key}&${params.language}`
+// https://api.themoviedb.org/3/movie/150026/credits?api_key=d7b62bbeb6d4f73491b6f9e9927a7e28&language=en-US
+export const getCast = async id => {
+  const casts = await axios.get(
+    `movie/${id}/credits?api_key=${params.key}&${params.language}`
   );
-  console.log(cast);
-  return cast;
+  console.log(casts.data.cast);
+  return casts.data.cast;
 };
 
 // for Reviews
 // https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
-export const getReviews = async () => {
+export const getReviews = async id => {
   const reviews = await axios.get(
-    `movies/{movie_id}/reviews?api_key=${params.key}&${params.language}&page=1`
+    `movie/${id}/reviews?api_key=${params.key}&${params.language}&page=1`
   );
-  console.log(reviews);
-  return reviews;
+  console.log(reviews.data.reviews);
+  return reviews.datareviews;
 };

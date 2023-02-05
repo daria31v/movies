@@ -20,14 +20,8 @@ export const MoviesDetails = () => {
   useEffect(() => {
     getDetails(id).then(resp => {
       setMovieData(resp);
-      // console.log(resp);
     });
   }, [id]);
-
-  // const handleBtnGoBack = () => {
-  //   navigate(location.state.from);
-  //   // console.log(location);
-  // };
 
   if (!movieData) {
     return (
@@ -39,7 +33,6 @@ export const MoviesDetails = () => {
   return (
     <>
       <BackLink to={backLinkHref}>Back to products</BackLink>
-
       <img src={BASE_IMG + movieData.poster_path} alt="" width="150px" />
       <h3>{movieData.original_title}</h3>
       <p>xxxx</p>

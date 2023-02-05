@@ -1,34 +1,26 @@
-// import { getCast } from '../../Service/apiThemovieBb';
-// import { useState, useEffect } from 'react';
+import { getCast } from '../../Service/apiThemovieBb';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { BASE_IMG } from '../../Service/constant';
 
 export const Cast = () => {
-  // const [cast, setCast] = useState([]);
+  const { id } = useParams();
+  const [cast, setCast] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchCast() {
-  //     try {
-  //       const castFetch = await getCast();
-  //       console.log(castFetch);
-  //       setCast(castFetch.results);
-  //     } catch {
-  //       console.log('error');
-  //     }
-  //   }
-  //   fetchCast();
-  // }, []);
+  useEffect(() => {
+    getCast(id).then(setCast);
+  }, [id]);
 
   return (
-    <section>
-      <div>
-        <h1>Cast</h1>
-        {/* <ul key={cast.credit_id}> */}
-        {/* <li> */}
-        {/* <image src={cast.profile_path} alt="photo actor" /> */}
-        {/* <h3>{cast.original_name}</h3> */}
-        {/* <p>{cast.character}</p> */}
-        {/* </li> */}
-        {/* </ul>  */}
-      </div>
-    </section>
+    <div>
+      <h1>Cast</h1>
+      {cast.map(actor => (
+        <li key={actor.id}>
+          <img src={BASE_IMG + actor.profile_path} alt="actor" width="80px" />
+          <h3>{actor.original_name}</h3>
+          <h4>Character: {actor.character}</h4>
+        </li>
+      ))}
+    </div>
   );
 };

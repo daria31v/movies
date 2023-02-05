@@ -7,18 +7,17 @@ import { getSearchMovie } from '../../Service/apiThemovieBb';
 export const Movies = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
-
   const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    const searchQuery = searchParams.get('query') ?? '';
     if (!searchQuery) {
       return;
     }
     getSearchMovie(searchQuery).then(setMovies);
 
     console.log(searchQuery);
-  }, [searchParams]);
+  }, [searchQuery]);
 
   const handleChange = evt => {
     setQuery(evt.target.value);
