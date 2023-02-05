@@ -1,30 +1,28 @@
-
 // export default Home;
-import { TrendingTodaytList } from "../components/TrendingTodayList";
-import { getTrendingMovies } from "../Service/apiThemoviedb";
-import { useState, useEffect } from "react";
+import { MoviesList } from '../../components/MoviesList/MoviesList';
+import { getTrendingMovies } from '../../Service/apiThemovieBb';
+import { useState, useEffect } from 'react';
+
 export const Home = () => {
   const [movies, setMovies] = useState([]);
 
-   useEffect(() => {
+  useEffect(() => {
     async function fetchTrendingMovies() {
       try {
         const dataFetch = await getTrendingMovies();
         // console.log(dataFetch)
         setMovies(dataFetch.results);
-
-      } catch  {
+      } catch {
         alert('💥SOMETHING WENT WRONG! TRY LATER.');
-      } 
-    };
+      }
+    }
     fetchTrendingMovies();
-   }, []);
-  
-  
+  }, []);
+
   return (
     <main>
       <h1>Trending today</h1>
-      <TrendingTodaytList movies={movies} />
+      <MoviesList movies={movies} />
     </main>
   );
 };
