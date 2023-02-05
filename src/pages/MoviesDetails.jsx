@@ -1,17 +1,16 @@
-// import { useParams } from "react-router-dom";
-// import { getProductById } from "../fakeAPI";
+import { useParams } from "react-router-dom";
+import { getTrendingMoviesById } from "../Service/searchMovies";
 
 export const MoviesDetails = () => {
-//   const { id } = useParams();
-//   const product = getProductById(id);
+  const { id } = useParams();
+  const movie = getTrendingMoviesById(id);
   return (
     <main>
-      <img src="https://via.placeholder.com/960x240" alt="" />
+      <img src={movie.poster_path} alt="poster movie" />
       <div>
-        <h2>
-                  Movie -
-                  {/* {movie.name} - {id} */}
-        </h2>
+        <h2> Movie - {movie.title} - {id} </h2>
+        <h3>{movie.title}</h3>
+        <p></p>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
           sunt excepturi nesciunt iusto dignissimos assumenda ab quae cupiditate
