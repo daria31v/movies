@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { BASE_IMG } from '../../Service/constant';
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
 
@@ -11,9 +11,16 @@ export const Cast = () => {
     getCast(id).then(setCast);
   }, [id]);
 
+  if (cast.length === 0) {
+    return (
+      <div>
+        <p>We don`t have any cast for this movie.</p>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <h1>Cast</h1>
       {cast.map(actor => (
         <li key={actor.id}>
           <img src={BASE_IMG + actor.profile_path} alt="actor" width="80px" />
@@ -24,3 +31,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;

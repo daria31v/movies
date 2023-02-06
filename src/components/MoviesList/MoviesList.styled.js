@@ -1,15 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: grid;
+  display: block;
   grid-template-columns: repeat(auto-fit, 200px);
   gap: 16px;
 `;
 
 export const CardWrapper = styled.div`
-  border: 1px solid black;
-  border-radius: 4px;
-
+  border-bottom: 1px solid tomato;
+  border-right: 1px solid tomato;
+  /* border-radius: 4px;  */
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  color: tomato;
   > a {
     text-decoration: none;
   }

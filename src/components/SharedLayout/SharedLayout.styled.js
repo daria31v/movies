@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { MdOutlineLocalMovies } from 'react-icons/md';
 
 export const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
+
 `;
 
 export const Header = styled.header`
@@ -20,9 +22,13 @@ export const Header = styled.header`
   }
 `;
 
-export const Logo = styled.p`
+export const Logo = styled.div`
   font-weight: 700;
   margin: 0;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  color: tomato;
 `;
 
 export const Link = styled(NavLink)`
@@ -33,7 +39,13 @@ export const Link = styled(NavLink)`
   font-weight: 500;
 
   &.active {
-    color: white;
-    background-color: orangered;
+    color: orangered;
+    /* background-color: orangered; */
   }
 `;
+
+export const Icon = styled(MdOutlineLocalMovies)`
+width: 30px;
+height: 20px;
+
+`

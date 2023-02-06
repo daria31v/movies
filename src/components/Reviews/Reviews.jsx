@@ -1,33 +1,33 @@
-// import { getReviews } from '../../Service/apiThemovieBb';
-// import { useState, useEffect } from 'react';
+import { getReviews } from '../../Service/apiThemovieBb';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-export const Reviews = () => {
-  // const [reviews, setReviews] = useState([]);
+const Reviews = () => {
+  const { id } = useParams();
+  const [reviews, setReviews] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchReviews() {
-  //     try {
-  //       const reviewsFetch = await getReviews();
-  //       console.log(reviewsFetch);
-  //       setReviews(reviewsFetch.results);
-  //     } catch {
-  //       console.log('error');
-  //     }
-  //   }
-  //   fetchReviews();
-  // }, []);
+  useEffect(() => {
+    getReviews(id).then(setReviews);
+  }, [id]);
+
+  if (reviews.length === 0) {
+    return (
+      <div>
+        <p>We don`t have any reviews for this movie.</p>
+      </div>
+    );
+  }
 
   return (
-    <section>
-      <div>
-        <h1>Rewievs</h1>
-        {/* <ul key={reviews.id}>
-          <li>
-            <h3>{reviews.author}</h3>
-            <p>{reviews.content}</p>
-          </li>
-        </ul> */}
-      </div>
-    </section>
+    <div>
+      {reviews.map(review => (
+        <li key={review.id}>
+          <h3>Author: {review.author}</h3>
+          <p>{review.content}</p>
+        </li>
+      ))}
+    </div>
   );
 };
+
+export default Reviews;

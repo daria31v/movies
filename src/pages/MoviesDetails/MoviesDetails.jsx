@@ -1,20 +1,14 @@
-import {
-  useParams,
-  Link,
-  Outlet,
-  useLocation,
-  // useNavigate,
-} from 'react-router-dom';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getDetails } from '../../Service/apiThemovieBb';
-import { BASE_IMG } from 'Service/constant';
+import { BASE_IMG, IMG } from 'Service/constant';
+
 import { BackLink } from 'components/BackLink/BackLink';
 
-export const MoviesDetails = () => {
+const MoviesDetails = () => {
   const [movieData, setMovieData] = useState(null);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/movies';
-  // const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -26,18 +20,24 @@ export const MoviesDetails = () => {
   if (!movieData) {
     return (
       <div>
-        <h1>Not found</h1>
+        <h1>Something went wrong...</h1>
       </div>
     );
   }
   return (
     <>
-      <BackLink to={backLinkHref}>Back to products</BackLink>
+      <BackLink to={backLinkHref}>GO BACK</BackLink>
       <img src={BASE_IMG + movieData.poster_path} alt="" width="150px" />
+      {movieData.poster_path === null && <img src={IMG} alt="" width="150px" />}
       <h3>{movieData.original_title}</h3>
-      <p>xxxx</p>
+      <p>User Score: {Math.round(movieData.popularity)} points</p>
       <h4>Overview</h4>
-      <p>xxx</p>
+      <p>{movieData.overview}</p>
+      {movieData.overview === '' && (
+        <p>We don`t have any overview for this movie.</p>
+      )}
+      <h4>Genres</h4>
+      {/* <li>{[movieData.genres[{}]]}</li> */}
       <div>
         <h4>Additional information</h4>
         <Link to="cast" state={{ from: location.state.from }}>
@@ -51,3 +51,5 @@ export const MoviesDetails = () => {
     </>
   );
 };
+
+export default MoviesDetails;

@@ -1,18 +1,21 @@
-// import { lazy } from "react";
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-
-import { Home } from '../pages/Home/Home';
-import { Movies } from '../pages/Movies/Movies';
-import { MoviesDetails } from '../pages/MoviesDetails/MoviesDetails';
-import { Cast } from './Cast/Cast';
-import { Reviews } from './Reviews/Reviews';
-// import {NotFound} from '../pages/NotFound'
-// const Home = lazy(() => import("../pages/Home"));
-// const Movies = lazy(() => import("../pages/Movies"));
-// const Cast = lazy(() => import("../pages/Cast"));
-// const Reviews = lazy(() => import("./Reviews"));
-// const NotFound = lazy(() => import("../pages/NotFound"));
+// ***********************
+// import { Home } from '../pages/Home/Home';
+// import { Movies } from '../pages/Movies/Movies';
+// import { MoviesDetails } from '../pages/MoviesDetails/MoviesDetails';
+// import { Cast } from './Cast/Cast';
+// import { Reviews } from './Reviews/Reviews';
+// ***************************
+const Home = lazy(() => import('../pages/Home/Home'));
+const Movies = lazy(() => import('../pages/Movies/Movies'));
+const MoviesDetails = lazy(() =>
+  import('../pages/MoviesDetails/MoviesDetails')
+);
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
@@ -25,8 +28,7 @@ export const App = () => {
           <Route path="reviews" element={<Reviews />} />
         </Route>
       </Route>
-      {/* <Route path="*" element={<NotFound />} /> */}
-      {/* </Route> */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

@@ -28,7 +28,7 @@ export const getDetails = async id => {
   const details = await axios.get(
     `movie/${id}?api_key=${params.key}&${params.language}`
   );
-  // console.log(details.data);
+  console.log(details.data);
   return details.data;
 };
 
@@ -45,10 +45,10 @@ export const getCast = async id => {
 
 // for Reviews
 // https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
-export const getReviews = async id => {
+export const getReviews = async credit_id => {
   const reviews = await axios.get(
-    `movie/${id}/reviews?api_key=${params.key}&${params.language}&page=1`
+    `movie/${credit_id}/reviews?api_key=${params.key}&${params.language}&page=1`
   );
-  console.log(reviews.data.reviews);
-  return reviews.datareviews;
+  // console.log(reviews.data.results);
+  return reviews.data.results;
 };
