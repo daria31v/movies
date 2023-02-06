@@ -1,6 +1,6 @@
 // export default Home;
 import { MoviesList } from '../../components/MoviesList/MoviesList';
-import { getTrendingMovies } from '../../Service/apiThemovieBb';
+import { getTrendingMovies } from '../../service/apiThemovieBb';
 import { useState, useEffect } from 'react';
 
 const Home = () => {
@@ -10,7 +10,6 @@ const Home = () => {
     async function fetchTrendingMovies() {
       try {
         const dataFetch = await getTrendingMovies();
-        // console.log(dataFetch)
         setMovies(dataFetch.results);
       } catch {
         alert('💥SOMETHING WENT WRONG! TRY LATER.');

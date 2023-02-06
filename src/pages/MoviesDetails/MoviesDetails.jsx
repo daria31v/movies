@@ -1,8 +1,8 @@
-import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getDetails } from '../../Service/apiThemovieBb';
-import { BASE_IMG, IMG } from 'Service/constant';
-
+import { getDetails } from '../../service/apiThemovieBb';
+import { BASE_IMG, IMG } from 'service/constant';
+import { Links, Container } from '../MoviesDetails/MoviesDetails.styled';
 import { BackLink } from 'components/BackLink/BackLink';
 
 const MoviesDetails = () => {
@@ -24,6 +24,10 @@ const MoviesDetails = () => {
       </div>
     );
   }
+  const genresMovie = movieData.genres;
+  const allGenrse = genresMovie.map(genresMovie => genresMovie.name + ' ');
+  // console.log(allGenrse);
+
   return (
     <>
       <BackLink to={backLinkHref}>GO BACK</BackLink>
@@ -37,17 +41,20 @@ const MoviesDetails = () => {
         <p>We don`t have any overview for this movie.</p>
       )}
       <h4>Genres</h4>
-      {/* <li>{[movieData.genres[{}]]}</li> */}
-      <div>
+      <li>
+        <p>{allGenrse}</p>
+      </li>
+      <Container>
         <h4>Additional information</h4>
-        <Link to="cast" state={{ from: location.state.from }}>
+        <Links to="cast" state={{ from: location.state.from }}>
           Cast
-        </Link>
-        <Link to="reviews" state={{ from: location.state.from }}>
+        </Links>
+
+        <Links to="reviews" state={{ from: location.state.from }}>
           Reviews
-        </Link>
+        </Links>
         <Outlet />
-      </div>
+      </Container>
     </>
   );
 };

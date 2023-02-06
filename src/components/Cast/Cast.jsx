@@ -1,7 +1,7 @@
-import { getCast } from '../../Service/apiThemovieBb';
+import { getCast } from '../../service/apiThemovieBb';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { BASE_IMG } from '../../Service/constant';
+import { BASE_IMG } from '../../service/constant';
 
 const Cast = () => {
   const { id } = useParams();

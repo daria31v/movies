@@ -1,4 +1,4 @@
-import { getReviews } from '../../Service/apiThemovieBb';
+import { getReviews } from '../../service/apiThemovieBb';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

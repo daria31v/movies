@@ -28,7 +28,7 @@ export const getDetails = async id => {
   const details = await axios.get(
     `movie/${id}?api_key=${params.key}&${params.language}`
   );
-  console.log(details.data);
+  // console.log(details.data);
   return details.data;
 };
 
@@ -39,7 +39,7 @@ export const getCast = async id => {
   const casts = await axios.get(
     `movie/${id}/credits?api_key=${params.key}&${params.language}`
   );
-  console.log(casts.data.cast);
+  // console.log(casts.data.cast);
   return casts.data.cast;
 };
 
