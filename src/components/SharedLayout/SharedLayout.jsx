@@ -15,7 +15,10 @@ export const SharedLayout = () => {
         </nav>
         <Logo>
           <Icon />
-          <span> MOVIES</span>
+          <Link to="/" end>
+            {' '}
+            MOVIES
+          </Link>
         </Logo>
       </Header>
 
