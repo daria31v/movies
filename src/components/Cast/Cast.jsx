@@ -2,6 +2,7 @@ import { getCast } from '../../service/apiThemovieBb';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { BASE_IMG } from '../../service/constant';
+import { Container, Profile, ProfilePhoto } from './Cast.styled';
 
 const Cast = () => {
   const { id } = useParams();
@@ -20,15 +21,19 @@ const Cast = () => {
   }
 
   return (
-    <div>
+    <Container>
       {cast.map(actor => (
-        <li key={actor.id}>
-          <img src={BASE_IMG + actor.profile_path} alt="actor" width="80px" />
+        <Profile key={actor.id}>
+          <ProfilePhoto
+            src={BASE_IMG + actor.profile_path}
+            alt="actor"
+            width="80px"
+          />
           <h3>{actor.original_name}</h3>
           <h4>Character: {actor.character}</h4>
-        </li>
+        </Profile>
       ))}
-    </div>
+    </Container>
   );
 };
 

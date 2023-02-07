@@ -20,10 +20,7 @@ const Home = () => {
 
   return (
     <main>
-      <div>
-        <h1>ggg</h1>
-      </div>
-      <h2>Trending today</h2>
+      <h2>TRENDING TODAY</h2>
       <MoviesList movies={movies} />
     </main>
   );

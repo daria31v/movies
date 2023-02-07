@@ -1,7 +1,7 @@
 import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getDetails } from '../../service/apiThemovieBb';
-import { BASE_IMG, IMG } from 'service/constant';
+import { BASE_IMG, IMG, NOT_FOUND } from 'service/constant';
 import {
   Links,
   Container,
@@ -28,6 +28,7 @@ const MoviesDetails = () => {
     return (
       <div>
         <h1>Something went wrong...</h1>
+        <img src={NOT_FOUND} alt="bad search" />
       </div>
     );
   }
