@@ -2,7 +2,7 @@ import { SearchBox } from '../../components/SearchBox/SearchBox';
 import { useState, useEffect } from 'react';
 import { MoviesList } from '../../components/MoviesList/MoviesList';
 import { useSearchParams } from 'react-router-dom';
-import { getSearchMovie } from '../../service/apiThemovieBb';
+import { getSearchMovie } from '../../Service/apiThemovieBb';
 
 const Movies = () => {
   const [query, setQuery] = useState('');

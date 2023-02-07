@@ -22,6 +22,7 @@ export const Icon = styled(HiSearch)`
   position: absolute;
   right: 20px;
 `;
+
 export const Btn = styled.button`
 width: 60px;
 height: 37px;
@@ -33,4 +34,4 @@ border: 2px solid tomato;
 border-radius: 4px;
 color: tomato;
 background-color: white;
-`
+`;

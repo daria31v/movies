@@ -1,6 +1,6 @@
 // export default Home;
 import { MoviesList } from '../../components/MoviesList/MoviesList';
-import { getTrendingMovies } from '../../service/apiThemovieBb';
+import { getTrendingMovies } from '../../Service/apiThemovieBb';
 import { useState, useEffect } from 'react';
 
 const Home = () => {

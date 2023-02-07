@@ -1,7 +1,7 @@
 import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getDetails } from '../../service/apiThemovieBb';
-import { BASE_IMG, IMG, NOT_FOUND } from 'service/constant';
+import { getDetails } from '../../Service/apiThemovieBb';
+import { BASE_IMG, IMG, NOT_FOUND } from 'Service/constant';
 import {
   Links,
   Container,

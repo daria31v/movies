@@ -6,7 +6,6 @@ export const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
-
 `;
 
 export const Header = styled.header`
@@ -39,13 +38,11 @@ export const Link = styled(NavLink)`
   font-weight: 700;
 
   &.active {
-    color: orangered;
-    
+    color: orangered;    
   }
 `;
 
 export const Icon = styled(MdOutlineLocalMovies)`
 width: 30px;
 height: 20px;
-
-`
+`;
