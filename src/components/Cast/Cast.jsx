@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { BASE_IMG } from '../../Service/constant';
 import { Container, Profile, ProfilePhoto } from './Cast.styled';
+import PropTypes from 'prop-types';
 
 const Cast = () => {
   const { id } = useParams();
@@ -38,3 +39,9 @@ const Cast = () => {
 };
 
 export default Cast;
+
+Cast.protoType = {
+  id: PropTypes.number.isRequired,
+  cast: PropTypes.array.isRequired,
+  getCast: PropTypes.func.isRequired,
+}.isRequired;

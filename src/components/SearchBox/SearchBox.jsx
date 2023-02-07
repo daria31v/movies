@@ -1,4 +1,5 @@
 import { Wrapper, Input, Icon, Btn } from './SearchBox.styled';
+import PropTypes from 'prop-types';
 
 export const SearchBox = ({ value, onChange, onSubmit }) => {
   return (
@@ -10,3 +11,9 @@ export const SearchBox = ({ value, onChange, onSubmit }) => {
     </Wrapper>
   );
 };
+
+SearchBox.protoType = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+}.isRequired;

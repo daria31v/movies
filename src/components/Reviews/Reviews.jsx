@@ -2,6 +2,7 @@ import { getReviews } from '../../Service/apiThemovieBb';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { TextReviews } from './Reviews.styled';
+import PropTypes from 'prop-types';
 
 const Reviews = () => {
   const { id } = useParams();
@@ -32,3 +33,9 @@ const Reviews = () => {
 };
 
 export default Reviews;
+
+Reviews.protoType = {
+  id: PropTypes.number.isRequired,
+  reviews: PropTypes.array.isRequired,
+  getReviews: PropTypes.func.isRequired,
+}.isRequired;
