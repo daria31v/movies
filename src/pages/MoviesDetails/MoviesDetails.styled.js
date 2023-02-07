@@ -3,11 +3,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 display: inline-block;
-`
-
+`;
 export const Links = styled(Link)`
-  /* padding: 8px 16px; */
-  /* border-radius: 4px; */
   display: block;
   margin-bottom: 10px;
   text-decoration: none;
@@ -20,6 +17,28 @@ export const Links = styled(Link)`
   }
 `;
 
-export const Genres = styled.p`
-margin-right: 8px;
+export const Text = styled.p`
+margin: 0;
+margin-bottom: 10px;
+background-color: white;
+opacity: 0.95;
+`;
+
+export const Title = styled.h3`
+margin-top: 10px;
+border-bottom: 2px solid tomato;
+margin-bottom: 10px;
+`;
+
+export const Lable = styled.h4`
+margin-top: 10px;
+border-bottom: 2px solid tomato;
+margin-bottom: 10px;
+ 
+`;
+
+export const LableBox = styled.div`
+width: 960px;
+border-bottom: 2px solid tomato;
+margin-bottom: 10px;
 `

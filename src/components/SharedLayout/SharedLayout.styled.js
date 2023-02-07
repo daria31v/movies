@@ -36,11 +36,11 @@ export const Link = styled(NavLink)`
   border-radius: 4px;
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-weight: 700;
 
   &.active {
     color: orangered;
-    /* background-color: orangered; */
+    
   }
 `;
 

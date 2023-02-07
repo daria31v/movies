@@ -7,8 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(31deg, #cca4a4, #72759c); */
-  /* background-size: cover; */
 }
 
 code {
@@ -19,6 +17,13 @@ code {
 body {
   font-family: sans-serif;
   line-height: 1.5;
+  background-image: url('https://cdn.pixabay.com/photo/2016/02/01/18/59/filmstrip-1174228_960_720.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 700px 400px;
+  background-size: 500px;
+  right: 30px;
+  bottom: 30px;
 }
 
 h1,

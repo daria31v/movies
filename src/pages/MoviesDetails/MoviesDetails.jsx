@@ -2,7 +2,14 @@ import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getDetails } from '../../service/apiThemovieBb';
 import { BASE_IMG, IMG } from 'service/constant';
-import { Links, Container } from '../MoviesDetails/MoviesDetails.styled';
+import {
+  Links,
+  Container,
+  Text,
+  Title,
+  Lable,
+  LableBox,
+} from '../MoviesDetails/MoviesDetails.styled';
 import { BackLink } from 'components/BackLink/BackLink';
 
 const MoviesDetails = () => {
@@ -26,30 +33,33 @@ const MoviesDetails = () => {
   }
   const genresMovie = movieData.genres;
   const allGenrse = genresMovie.map(genresMovie => genresMovie.name + ' ');
-  // console.log(allGenrse);
 
   return (
     <>
       <BackLink to={backLinkHref}>GO BACK</BackLink>
+
       <img src={BASE_IMG + movieData.poster_path} alt="" width="150px" />
       {movieData.poster_path === null && <img src={IMG} alt="" width="150px" />}
-      <h3>{movieData.original_title}</h3>
-      <p>User Score: {Math.round(movieData.popularity)} points</p>
-      <h4>Overview</h4>
-      <p>{movieData.overview}</p>
+
+      <Title>{movieData.original_title}</Title>
+      <Text>User Score: {Math.round(movieData.popularity)} points</Text>
+
+      <Lable>Overview</Lable>
+      <Text>{movieData.overview}</Text>
       {movieData.overview === '' && (
         <p>We don`t have any overview for this movie.</p>
       )}
-      <h4>Genres</h4>
-      <li>
-        <p>{allGenrse}</p>
-      </li>
+
+      <Lable>Genres</Lable>
+      <Text>{allGenrse}</Text>
+
       <Container>
-        <h4>Additional information</h4>
+        <LableBox>
+          <h4>Additional information</h4>
+        </LableBox>
         <Links to="cast" state={{ from: location.state.from }}>
           Cast
         </Links>
-
         <Links to="reviews" state={{ from: location.state.from }}>
           Reviews
         </Links>

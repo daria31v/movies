@@ -16,9 +16,7 @@ export const CardWrapper = styled.div`
   }
   :hover {
     border-bottom: 1px solid tomato;
-    /* border-right: 1px solid tomato; */
-    border-top: 1px solid tomato;
-    
+    border-top: 1px solid tomato;  
   }
 `;
 
@@ -31,5 +29,6 @@ export const MoviesTitle = styled.h3`
   :hover {
     color: tomato;
     text-transform: uppercase;
+    /* box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3); */
   }
 `;

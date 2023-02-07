@@ -1,6 +1,6 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
-// https://api.themoviedb.org/3/search/movie?api_key=d7b62bbeb6d4f73491b6f9e9927a7e28&language=en-US&page=1&include_adult=false
+
 const params = {
   key: 'd7b62bbeb6d4f73491b6f9e9927a7e28',
   language: 'language=en-US',
@@ -34,7 +34,6 @@ export const getDetails = async id => {
 
 // for Cast
 // https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=<<api_key>>&language=en-US
-// https://api.themoviedb.org/3/movie/150026/credits?api_key=d7b62bbeb6d4f73491b6f9e9927a7e28&language=en-US
 export const getCast = async id => {
   const casts = await axios.get(
     `movie/${id}/credits?api_key=${params.key}&${params.language}`

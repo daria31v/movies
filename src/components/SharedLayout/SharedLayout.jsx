@@ -9,9 +9,9 @@ export const SharedLayout = () => {
       <Header>
         <nav>
           <Link to="/" end>
-            Home
+            HOME
           </Link>
-          <Link to="/movies">Movies</Link>
+          <Link to="/movies">MOVIES</Link>
         </nav>
         <Logo>
           <Icon />

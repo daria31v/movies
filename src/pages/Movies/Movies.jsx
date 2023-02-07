@@ -14,6 +14,7 @@ const Movies = () => {
     if (!searchQuery) {
       return;
     }
+
     getSearchMovie(searchQuery).then(setMovies);
 
     console.log(searchQuery);

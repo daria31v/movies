@@ -1,6 +1,7 @@
 import { getReviews } from '../../service/apiThemovieBb';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { TextReviews } from './Reviews.styled';
 
 const Reviews = () => {
   const { id } = useParams();
@@ -21,10 +22,10 @@ const Reviews = () => {
   return (
     <div>
       {reviews.map(review => (
-        <li key={review.id}>
+        <TextReviews key={review.id}>
           <h3>Author: {review.author}</h3>
           <p>{review.content}</p>
-        </li>
+        </TextReviews>
       ))}
     </div>
   );
