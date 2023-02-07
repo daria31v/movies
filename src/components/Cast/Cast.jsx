@@ -29,7 +29,7 @@ const Cast = () => {
             alt="actor"
             width="80px"
           />
-          <h3>{actor.original_name}</h3>
+          <h3>{actor.name}</h3>
           <h4>Character: {actor.character}</h4>
         </Profile>
       ))}

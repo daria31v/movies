@@ -10,6 +10,7 @@ const params = {
 // for HOME
 export const getTrendingMovies = async () => {
   const resp = await axios.get(`trending/all/day?api_key=${params.key}`);
+  // console.log(resp.data);
   return resp.data;
 };
 
