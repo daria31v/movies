@@ -1,7 +1,7 @@
-import { getCast } from '../../Service/apiThemovieBb';
+import { getCast } from '../../services/apiThemovieBb';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { BASE_IMG } from '../../Service/constant';
+import { BASE_IMG } from '../../services/constant';
 import { Container, Profile, ProfilePhoto } from './Cast.styled';
 import PropTypes from 'prop-types';
 
